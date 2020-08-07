@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListRecipeComponent implements OnInit {
 
+  allowed: boolean = false;
+  currentCar: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.currentCar = "Renault";
+
+    setTimeout(() => {
+      this.allowed = true
+    }, 3000);
   }
 
 }
