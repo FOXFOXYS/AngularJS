@@ -8,13 +8,15 @@ import { ListRecipeModule } from './page/list-recipe/list-recipe.module';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './page/home/home.component';
 import { HomeModule } from './page/home/home.module';
+import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListRecipeComponent,
     RecipeComponent,
-    HomeComponent
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
