@@ -9,6 +9,10 @@ export class ListRecipeComponent implements OnInit {
 
   allowed: boolean = false;
   currentCar: string;
+  // cars: string[] = {
+  //   "coucou"
+  // };
+
   constructor() { }
 
   ngOnInit(): void {
