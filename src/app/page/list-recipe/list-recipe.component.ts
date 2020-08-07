@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RecipeService} from 'src/app/services/recipe.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-list-recipe',
   templateUrl: './list-recipe.component.html',
   styleUrls: ['./list-recipe.component.scss']
 })
-export class ListRecipeComponent implements OnInit {
+export class ListRecipeComponent implements OnInit, OnDestroy {
 
+  recipes: any[];
+  recipeSubscription: Subscription;
   allowed: boolean = false;
   currentCar: string;
-  // cars: string[] = {
-  //   "coucou"
-  // };
+  cars: string[] = [
+    "coucou",
+    "hello",
+    "lol"
+  ];
 
   constructor(
     private recipeService: RecipeService
@@ -24,6 +29,13 @@ export class ListRecipeComponent implements OnInit {
     setTimeout(() => {
       this.allowed = true
     }, 3000);
+
+    this.recipeSubscription = this.recipeService.recipeSubject.subscribe(
+      (recipes: any[]) => {
+        this.recipes = recipes;
+        console.log(this.recipes);
+      }
+    );
   }
 
   activate(id: number) {
@@ -34,4 +46,8 @@ export class ListRecipeComponent implements OnInit {
     this.recipeService.getAllRecipes();
   }
 
+  ngOnDestroy() {
+
+  }
 }
+ 

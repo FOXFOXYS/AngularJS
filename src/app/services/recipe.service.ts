@@ -21,8 +21,9 @@ export class RecipeService {
 
   getAllRecipes() {
     this.httpClient.get(environment.apiUrl+"recipes").subscribe(
-      (recipes) => {
-        
+      (recipes: any) => {
+        this.recipes = recipes;
+        this.emitRecipeSubject();
         console.log(recipes);
       },
       (error) => {
