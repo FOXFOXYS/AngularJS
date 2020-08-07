@@ -12,6 +12,7 @@ import { HomeModule } from './page/home/home.module';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import { ViewRecipeComponent } from './page/view-recipe/view-recipe.component';
 import { CreateRecipeComponent } from './page/create-recipe/create-recipe.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CreateRecipeComponent } from './page/create-recipe/create-recipe.compon
     BrowserModule,
     AppRoutingModule,
     ListRecipeModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService} from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-list-recipe',
@@ -13,7 +14,9 @@ export class ListRecipeComponent implements OnInit {
   //   "coucou"
   // };
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService
+  ) { }
 
   ngOnInit(): void {
     this.currentCar = "Renault";
@@ -25,6 +28,10 @@ export class ListRecipeComponent implements OnInit {
 
   activate(id: number) {
     alert(id);
+  }
+
+  getRecipes() {
+    this.recipeService.getAllRecipes();
   }
 
 }

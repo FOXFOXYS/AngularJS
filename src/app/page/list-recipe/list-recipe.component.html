@@ -12,6 +12,7 @@
     <li *ngFor="let c of cars">{{c | uppercase}}</li>
 </div> -->
 
+<button class="btn btn-success" (click)="getRecipes()">Récupérer</button>
 <button [hidden]="!allowed"  (click)="activate(6)" class="btn btn-success" style="color: white; background-color: red;">Status</button>
 
 <input type="text" class="form-control" [(ngModel)]="currentCar">
