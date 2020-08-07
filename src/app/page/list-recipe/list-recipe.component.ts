@@ -33,9 +33,11 @@ export class ListRecipeComponent implements OnInit, OnDestroy {
     this.recipeSubscription = this.recipeService.recipeSubject.subscribe(
       (recipes: any[]) => {
         this.recipes = recipes;
+        console.log("Subscriptions");
         console.log(this.recipes);
       }
     );
+    this.recipeService.getAllRecipes();
   }
 
   activate(id: number) {

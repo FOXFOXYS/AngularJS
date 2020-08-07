@@ -1,18 +1,32 @@
-<p>list-recipe works!</p>
-<h1>{{currentCar}}</h1>
-
-<div class="content" *ngIf="allowed">
-    <h1>je suis</h1>
-    <h1>je suis</h1>
-    <h1>je suis</h1>
-    <h1>je suis</h1>
+<section class="best-receipe-area">
+    <div class="row" *ngIf="recipes">
+        <div class="col-12">
+            <div class="my-4 text-center">
+                <h3>Liste des recettes</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <!-- <recipe class="white-box px-0 m-3 col-xs-12 col-sm-4 col-lg-2 col-xl-2" *ngFor='let recipe of recipes'
+            [recipeId]="recipe.id" [recipeTitle]="recipe.title" [recipeDescription]="recipe.description"
+            [recipeRating]="recipe.rating" [recipeImage]="recipe.image">
+        </recipe> -->
+        <!-- <div class="single-best-receipe-area mb-30" (click)="goToRecipe(recipeId)">
+            <img class="recipe-image" [src]="recipeImage" alt="">
+            <div class="receipe-content" >
+                <button class="btn">
+                    <h5>{{recipeTitle}}</h5>
+                </button>
+                <div class="ratings">
+                    <i class="fa fa-star" aria-hidden="true" *ngFor="let in of counter(recipeRating)"></i>
+                    <i class="far fa-star"*ngFor="let in of restCounter(recipeRating)"></i> 
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+<div class="loading" *ngIf="!recipes">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
 </div>
-
-<div class="content-array" [ngClass]="allowed ? 'yooooo' : 'rrr'">
-    <li *ngFor="let c of cars">{{c | uppercase}}</li>
-</div>
-
-<button class="btn btn-success" (click)="getRecipes()">Récupérer</button>
-<button [hidden]="!allowed"  (click)="activate(6)" class="btn btn-success" style="color: white; background-color: red;">Status</button>
-
-<input type="text" class="form-control" [(ngModel)]="currentCar">
