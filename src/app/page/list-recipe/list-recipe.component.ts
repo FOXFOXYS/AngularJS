@@ -19,4 +19,8 @@ export class ListRecipeComponent implements OnInit {
     }, 3000);
   }
 
+  activate(id: number) {
+    alert(id);
+  }
+
 }
