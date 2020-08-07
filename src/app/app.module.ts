@@ -9,6 +9,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { HomeComponent } from './page/home/home.component';
 import { HomeModule } from './page/home/home.module';
 import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { ViewRecipeComponent } from './page/view-recipe/view-recipe.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PageNotFoundComponent } from './page/page-not-found/page-not-found.comp
     ListRecipeComponent,
     RecipeComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ViewRecipeComponent
   ],
   imports: [
     BrowserModule,
